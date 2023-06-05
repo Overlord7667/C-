@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp10.RegistrationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        xmlns:Reg="clr-namespace:WpfApp10.ViewModel"
+        mc:Ignorable="d"
+    x:Name="Regist"
+        Title="RegistrationView" Height="450" Width="361.79">
+        <Window.DataContext>
+    <Reg:RegistrationViewModel></Reg:RegistrationViewModel>
+        </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120*"></RowDefinition>
+            <RowDefinition Height="192*"></RowDefinition>
+            <RowDefinition Height="107*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label>Login</Label>
+            <TextBox Text="{Binding Login,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Password</Label>
+            <TextBox Text="{Binding Pass,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Имя</Label>
+            <TextBox Text="{Binding Pass,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Button Command="{Binding RegClick}" CommandParameter="{Binding ElementName=Regist}" >Вход</Button>
+        </StackPanel>
+    </Grid>
+</Window>
